@@ -1,0 +1,60 @@
+function [U, S, V, elapsed, relErr] = generalized_Nystrom_SVD(A, Om, Psi, recordTime)
+% GENERALIZEDNYSTROM_SVD   Stable rank-k approximation via structured sketches.
+%   Implements Algorithm 6: uses SVD-based pseudoinverse with truncation at
+%   5*eps*largest_singular_value to avoid instability.
+%
+%   [U,S,V,elapsed,relErr] = generalized_Nystrom_SVD(A,Om,Psi,recordTime)
+%   Inputs:
+%     A          — (n×d) data matrix
+%     Om         — (d×k) right sketch
+%     Psi        — (n×p) left sketch with p ≥ k (e.g. p = ceil(1.5*k))
+%     recordTime — logical flag; if true, measures time + computes relErr
+%   Outputs:
+%     U (n×k), S (k×k), V (d×k) such that A ≈ U*S*V'
+%     elapsed    — time for sketch/QR/SVD steps (or [] if ~recordTime)
+%     relErr     — norm(A−U*S*V')/norm(A) (or [] if ~recordTime)
+
+  if nargin < 4, recordTime = false; end
+  if recordTime, t0 = tic; end
+
+  Y = A * Om;           
+  Q = orth(Y);      % n×k
+
+  X = A' * Psi;         
+  [P, T] = qr(X, 0);      % P: d×p, T: p×p
+
+  % 2) Compute small cross‐matrix and its SVD
+  M = Psi' * Q;          % p×k
+  [U1, S1, V1] = svd(M, 'econ');  
+
+  % 3) Numerical rank based on 5*eps*σ_max
+  sigma_max = S1(1,1);
+  tol = 5 * eps(class(sigma_max)) * sigma_max;
+  r = sum(diag(S1) > tol);
+  if r < size(Om,2)
+      warning('Effective rank r=%d < k=%d; truncating.', r, size(Om,2));
+  end
+
+  Sinv = diag(1 ./ diag(S1(1:r,1:r)));
+  C = V1(:,1:r) * ( Sinv * ( U1(:,1:r)' * T' ) );  % r×p
+  [Uc, Sc_full, Vc] = svd(C, 'econ');  
+  k = size(Om,2);
+  Uc_k = Uc(:, 1:k);                  
+  Sc   = Sc_full(1:k, 1:k);
+  Vc_k = Vc(:, 1:k);
+
+  % 6) Reconstruct final U, V, S
+  U = Q * Uc_k;        % n×k
+  V = P * Vc_k;        % d×k
+  S = Sc;              % k×k
+
+  % 7) Optional timing + error
+  if recordTime
+    elapsed = toc(t0);
+    Arec = U * S * V';
+    relErr = norm(A - Arec, 'fro') / norm(A, 'fro');
+  else
+    elapsed = [];
+    relErr = [];
+  end
+end
