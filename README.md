@@ -56,6 +56,8 @@ Contents
 
 ### 3. Low Rank Approximation experiments. 
 
+---
+
 <div align="center">
 <img width="3637" height="2988" alt="Sparse_final" src="https://github.com/user-attachments/assets/0e3dcd79-2cdc-43aa-bf09-213f461ef3a5" />
  
@@ -64,7 +66,6 @@ Contents
 </div>
 
 
----
 
 Experiments evaluating the low-rank approximation capabilities of various structured test matrices are located in the `experiments/` directory. All figure generation and related visualizations are handled locally through Jupyter notebooks in the `plotting/` directory.
 
