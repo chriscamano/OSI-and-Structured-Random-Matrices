@@ -40,10 +40,12 @@ Contents
   for the transverse-field Ising model Hamiltonian. Experiment available at  
   `experiments/Applications/Partition_function.m`.
   
-<img width="3637" height="2988" alt="Sparse_final" src="https://github.com/user-attachments/assets/0e3dcd79-2cdc-43aa-bf09-213f461ef3a5" />
 
 ### 3. Low Rank Approximation experiments. 
-Experiments testing the lowrank approximation ability of different structured test matrices can be found within `experiments/`. Plotting for all figures and additional content can be found in the `plotting/` directory which is done locally via jupyter notebooks.
+<img width="3637" height="2988" alt="Sparse_final" src="https://github.com/user-attachments/assets/0e3dcd79-2cdc-43aa-bf09-213f461ef3a5" />
 
+---
+
+Experiments evaluating the low-rank approximation capabilities of various structured test matrices are located in the `experiments/` directory. All figure generation and related visualizations are handled locally through Jupyter notebooks in the `plotting/` directory.
 
 
