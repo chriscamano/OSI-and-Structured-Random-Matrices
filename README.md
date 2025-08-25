@@ -1,15 +1,23 @@
 # OSI-and-Structured-Random-Matrices
 
-This repository contains the `matlab`/`C` codebase for the paper **Faster Linear Algebra Algorithms with Structured Random Matrices** by _Chris Camaño, Ethan N. Epperly, Raphael A. Meyer, and Joel A. Tropp_. Avilable here [hrefarxiv link].  
+This repository contains the `matlab`/`C` codebase for the paper **Faster Linear Algebra Algorithms with Structured Random Matrices** by _Chris Camaño, Ethan N. Epperly, Raphael A. Meyer, and Joel A. Tropp_. Available here [hrefarxiv link].  
 
-<img width="5434" height="1534" alt="Histogram_final2" src="https://github.com/user-attachments/assets/8a0a4435-4584-4fc6-89be-9b0c0045eebd" />
+
 
 ---
 
 Contents
 ---
 ### 1. Structured Sketching Matrices
+
 ---
+
+<div align="center">
+<img width="5434" height="1534" alt="Histogram_final2" src="https://github.com/user-attachments/assets/8a0a4435-4584-4fc6-89be-9b0c0045eebd" />
+
+**(Randomized SVD: Structured vs. Gaussian): Ratio of RSVD apporimation error `err_structured/err_gaussian` for 2413 martrices from the `SuiteSparse` matrix repository.**
+
+</div>
 
 - **SparseStacks**  
   Efficient `C` implementations of the *SparseStack* sketching matrix are provided in `code/sketches/SparseStack/sparseStack.c`. To compile locally in MATLAB, run:
@@ -28,7 +36,13 @@ Contents
 ### 2. Applications to Quantum Physics
 ---
 
+
+<div align="center">
 <img width="1853" height="751" alt="GPE3" src="https://github.com/user-attachments/assets/aeabec77-8667-4133-8bd0-78ac065bb47e" />
+ 
+**(Dynamics of imaginary-time Gross--Pitaevskii equation): Ground state solution (_left)_ and first 6 POD modes of the imaginary time evolution of the GPE equation.**
+
+</div>
 
 - **Gross–Pitaevskii Data Compression**  
   [Simulation of the Gross–Pitaevskii equation](https://en.wikipedia.org/wiki/Gross%E2%80%93Pitaevskii_equation), a nonlinear PDE governing the behavior of certain [Bose–Einstein condensates](https://en.wikipedia.org/wiki/Bose–Einstein_condensate). Proper Orthogonal Decomposition (POD) analysis and data compression are computed via the Generalized Nyström SVD with *SparseStack* test matrices. Experiment available at  
@@ -42,7 +56,14 @@ Contents
   
 
 ### 3. Low Rank Approximation experiments. 
+
+<div align="center">
 <img width="3637" height="2988" alt="Sparse_final" src="https://github.com/user-attachments/assets/0e3dcd79-2cdc-43aa-bf09-213f461ef3a5" />
+ 
+**(SparseStack versus SparseIID.): Relative error using RSVD with SparseStacks on various low rank approximation test matrices for different levels of sparsity.**
+
+</div>
+
 
 ---
 
