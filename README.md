@@ -1,6 +1,6 @@
 # OSI-and-Structured-Random-Matrices
 
-This repository contains the `matlab`/`C` codebase for the paper **Faster Linear Algebra Algorithms with Structured Random Matrices** b _Chris Camaño, Ethan N. Epperly, Raphael A. Meyer, and Joel A. Tropp_. Avilable here [hrefarxiv link].  
+This repository contains the `matlab`/`C` codebase for the paper **Faster Linear Algebra Algorithms with Structured Random Matrices** by _Chris Camaño, Ethan N. Epperly, Raphael A. Meyer, and Joel A. Tropp_. Avilable here [hrefarxiv link].  
 
 <img width="5434" height="1534" alt="Histogram_final2" src="https://github.com/user-attachments/assets/8a0a4435-4584-4fc6-89be-9b0c0045eebd" />
 
@@ -43,5 +43,7 @@ Contents
 <img width="3637" height="2988" alt="Sparse_final" src="https://github.com/user-attachments/assets/0e3dcd79-2cdc-43aa-bf09-213f461ef3a5" />
 
 ### 3. Low Rank Approximation experiments. 
-Experiments testing the lowrank approximation ability of different structured test matrices can 
+Experiments testing the lowrank approximation ability of different structured test matrices can be found within `experiments/`. Plotting for all figures and additional content can be found in the `plotting/` directory which is done locally via jupyter notebooks.
+
+
 
