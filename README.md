@@ -3,7 +3,6 @@
 This repository contains the `matlab`/`C` codebase for the paper **Faster Linear Algebra Algorithms with Structured Random Matrices** by _Chris Camaño, Ethan N. Epperly, Raphael A. Meyer, and Joel A. Tropp_. Available here [hrefarxiv link].  
 
 
-
 ---
 
 Contents
@@ -68,5 +67,7 @@ Contents
 ---
 
 Experiments evaluating the low-rank approximation capabilities of various structured test matrices are located in the `experiments/` directory. All figure generation and related visualizations are handled locally through Jupyter notebooks in the `plotting/` directory.
+
+- _NOTE_: Running the SuiteSparse comparison experiment requires a the custom `matlab` interface available [here](https://sparse.tamu.edu/interfaces) which must be added to scope. See the attached link for additional details.
 
 
