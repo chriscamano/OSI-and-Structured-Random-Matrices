@@ -68,6 +68,10 @@ Contents
 
 Experiments evaluating the low-rank approximation capabilities of various structured test matrices are located in the `experiments/` directory. All figure generation and related visualizations are handled locally through Jupyter notebooks in the `plotting/` directory.
 
-- _NOTE_: Running the SuiteSparse comparison experiment requires a the custom `matlab` interface available [here](https://sparse.tamu.edu/interfaces) which must be added to scope. See the attached link for additional details.
 
+### _Notes for developers_: 
+---
+- Running the SuiteSparse comparison experiment requires a the custom `matlab` interface available [here](https://sparse.tamu.edu/interfaces) which must be added to scope. See the attached link for additional details.
+- For the best performance, a custom version of the `expmv` version based on the [work](https://epubs.siam.org/doi/10.1137/100788860) of Nick Higham is used instead of the default matlab implementation. The folder`expmv` contains this implementation which can also be found online [here](https://www.mathworks.com/matlabcentral/fileexchange/29576-matrix-exponential-times-a-vector). This function is used to scale SparseStacks to extremely large matrices in `experiments/SparseStack/SparseStack_OSI.m` via Lanczos.
+- Please reach out with any questions about the implementation or issues running the code at `ccamano@caltech.edu`.
 
