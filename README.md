@@ -28,8 +28,8 @@ Contents
 - **Khatri–Rao**  
   Implementations of the Khatri–Rao sketching matrices, a tensor-product structured test matrix specified by a base distribution. Available options include real and complex Gaussians, real and complex Sphericals, real and complex Rademachers, and the Steinhaus distribution. Code is available at `code/sketches/KR/kr_sketch.m`.  
 
-- **Subsampled Trigonometric Transforms**  
-  Implementations of subsampled trigonometric transforms are available at `code/sketches/SparseTrigTransforms/srtt_explicit.c`. The current implementation explicitly forms the matrix
+- **Subsampled Randomized Trigonometric Transforms (SRTTs)**  
+  Implementations of subsampled randomized trigonometric transforms are available at `code/sketches/SparseTrigTransforms/srtt_explicit.c`. The current implementation explicitly forms the matrix
   $\Omega = \mathbf{D}\mathbf{F}\mathbf{S}$
   where **S** (the sparse component) can be chosen as uniform subsampling (default), SparseCol, CountSketch, or i.i.d. sampling. The transform **F** can be chosen as the Discrete Cosine Transform, Fast Fourier Transform, or Walsh–Hadamard Transform. A custom `C` implementation of the Walsh–Hadamard transform is provided at `code/sketches/SparseTrigTransforms/fwht.c` (compile with `mex fwht.c`).
 ### 2. Applications to Quantum Physics
