@@ -14,7 +14,7 @@ Contents
 <div align="center">
 <img width="5434" height="1534" alt="Histogram_final2" src="https://github.com/user-attachments/assets/8a0a4435-4584-4fc6-89be-9b0c0045eebd" />
 
-**(Randomized SVD: Structured vs. Gaussian): Ratio of RSVD apporimation error `err_structured/err_gaussian` for 2413 martrices from the `SuiteSparse` matrix repository.**
+**(Randomized SVD: Structured vs. Gaussian): Ratio of RSVD apporimation error `err_structured/err_gaussian` for 2314 martrices from the `SuiteSparse` matrix repository.**
 
 </div>
 
