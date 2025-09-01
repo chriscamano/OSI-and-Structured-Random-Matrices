@@ -1,6 +1,6 @@
 # OSI-and-Structured-Random-Matrices
 
-This repository contains the `matlab`/`C` codebase for the paper **Faster Linear Algebra Algorithms with Structured Random Matrices** by _Chris Camaño, Ethan N. Epperly, Raphael A. Meyer, and Joel A. Tropp_. Available here [hrefarxiv link].  
+This repository contains the `matlab`/`C` codebase for the paper [**Faster Linear Algebra Algorithms with Structured Random Matrices**](https://arxiv.org/abs/2508.21189) by _Chris Camaño, Ethan N. Epperly, Raphael A. Meyer, and Joel A. Tropp_. Available here.  
 
 
 ---
